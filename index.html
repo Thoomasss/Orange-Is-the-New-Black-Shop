@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="javascript/scriptb.js" defer></script>
+    <title>Service Client</title>
+    <link href="https://db.onlinewebfonts.com/c/1d4579d5f8e260642e9f21112b5e9996?family=Kudryashev+Headline+Sans+Web" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href='https://fonts.googleapis.com/css?family=Schoolbell' rel='stylesheet'>
+</head>
+
+<body>
+    <header class="section--header">
+        <nav>
+            <div id="logo">
+                <img class="logopoppy" src="oui/image/logo-poppy.png" alt="logo">
+                <ul class="menunav">
+                    <li><a href="#BlocDePiper">Bloc de Piper</a></li>
+                    <li><a href="#NosProduits">Nos produits</a></li>
+                    <li><a href="#Information">Information</a></li>
+                    <button class="toggleButton" id="toggleButton" onclick="afficher()">Connexion</button>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="wrapper" id="loginWrapper">
+            <div class="form-wrapper sign-in">
+                <form action="#" id="loginForm">
+                    <h2>Connexion</h2>
+                    <div class="input-group">
+                        <input type="text" id="usernameInput" required>
+                        <label for="usernameInput">Nom d'utilisateur</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="passwordInput" required>
+                        <label for="passwordInput">Mot de passe</label>
+                    </div>
+                    <div class="remember">
+                        <label><input type="checkbox"> Se souvenir de moi</label>
+                    </div>
+                    <button class="toggleButton2" type="button" onclick="cacher()">Se connecter</button>
+                </form>
+                </form>
+            </div>
+        </div>
+        <div class="action" id="chatbot1">
+            <i class="material-icons cchat-trigger" onclick="actionToggle();">&#xe0b7;</i>
+            <div class="chat-container">
+                <div class="response-container">
+                    <div id="chat-display"></div>
+                </div>
+                <div class="button-container">
+                    <button id="randomLetter" data-image="oui/image/daya.png">Envoyer une lettre</button>
+                    <button class="responseTrigger" data-message="T'inquiète, ça va arriver, sois juste patient." data-image="oui/image/Poussey.png">Comment se passe la livraison ?</button>
+                    <button class="responseTrigger" data-message="Tu croyais que ça pousse sur les arbres ?! T'es teubé toi." data-image="oui/image/Poussey.png">Il y a des produits en rupture, quand serez-vous fournis ?</button>
+                    <button class="responseTrigger" data-message="On est des PRISONNIÈRES, pas des robots, va te faire foutre tiens." data-image="oui/image/Poussey.png">Vous pouvez vendre des produits personnalisés ?</button>
+                    <button class="responseTrigger" data-message="Et toi, pourquoi t'ouvres ta bouche pour dire de la merde ? Casse-toi si ça ne te va pas !" data-image="oui/image/daya.png">Le site bug, pourquoi des savons puis de l'alcool ?</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="action2" id="chatbot2">
+            <i class="material-icons cchat-trigger" onclick="actionToggle2();">&#xe0b7;</i>
+            <div class="chat-container2">
+                <div class="response-container2">
+                    <div id="chat-display2"></div>
+                </div>
+                <div class="button-container2">
+                    <button class="responseTrigger2" data-message2="La livraison est réalisée de façon à ce que vous receviez notre produit en bon état et le plus rapidement possible ❤️" data-image2="oui/image/Poussey.png">Comment se passe la livraison ?</button>
+                    <button class="responseTrigger2" data-message2="Nous sommes désolés de notre rupture temporaire, nos producteurs font tout leur possible !" data-image2="oui/image/Poussey.png">Je vois qu'il n'y a plus de Lavender Hug en stock, quand serez-vous fournis ?</button>
+                    <button class="responseTrigger2" data-message2="Notre nouvelle collection sera présente quand nous serons plus aptes à réfléchir sur la question !" data-image2="oui/image/Poussey.png">Quand arrive votre nouvelle collection ?</button>
+                    <button class="responseTrigger2" data-message2="Désolé, mais actuellement le retour de produit n'est pas faisable !" data-image2="oui/image/daya.png">Je souhaite effectuer un retour de produit.</button>
+                    <button class="responseTrigger2" data-message2="Mais pas du tout ! Ce sont nos clients, ils sont satisfaits de nos produits !" data-image2="oui/image/Poussey.png">Je crois qu'il y a un souci avec votre espace commentaire, les avis sont… bizarres ?</button>
+                </div>
+            </div>
+        </div>
+        <section class="partiepropre">
+            <section>
+                <div class="logo">   
+                <img class="nomlogo" src="oui/image/bloc de piper.png" id="BlocDePiper"> 
+                </div>
+                <section class="sectionLogo">
+                </section>
+                <div class="bcp1">
+                    <img class="imgbloc1" src="oui/image/image1.png">
+                    <div class="imgbloc0-1">
+                        <img class="imgbloc1-2" src="oui/image/bloctexte1.png" alt="Image">  
+                    </div>
+                </div>
+            </section>
+            <section class="sect2">
+                <div class="bcp2">  
+                    <img class="imgbloc2" src="oui/image/image2.png">
+                    <div class="txt2"> 
+                        <img class="imgbloc2-1" src="oui/image/bloctexte2.png">
+                    </div>
+                </div>
+            </section>
+            <div class="shopLogo">
+                <img class="nomlogo" src="oui/image/shop-poppy.png" id="NosProduits">
+            </div>
+            <section class="sect3">
+                <div class="bcp3">
+                    <div class="texte3">
+                        <div class="txt3">
+                            <h1>coeur des iles</h1>
+                            <P>
+                                Douceur, douceur, .... 
+                            </P>
+                            <p>
+                                L'argile blanche permet un nettoyage de l'épiderme tout en douceur. Le lait de coco rend la peau lisse et souple.
+                            </p>
+                            <p>
+                                Huile essentielle de mandarine bio.
+                            </p>
+                        </div>
+                    </div>
+                    <img class="imgbloc3" src="oui/image/plat1.png">
+                </div>
+                <div class="bcp4">
+                    <img class="imgbloc4" src="oui/image/plat2.png">
+                    <div class="texte4">
+                        <div class="txt4">
+                            <h1>Fleur de carottes</h1>
+                            <P>
+                                Pour une peau lumineuse.
+                            </P>
+                            <p>
+                                Grâce au carotène, la peau garde toute son élasticité et rester en bonne santé.
+                            </p>
+                            <p>
+                                Huile essentielle d'orange douce bio.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bcp5">
+                    <div class="texte5">
+                        <div class="txt5">
+                            <h1>Ying-Yang</h1>
+                            <P>
+                                Je reste zen. 
+                            </P>
+                            <p>
+                                Le charbon actif est purifiant et assainit la peau. 
+                                Le lait d'amande pour une peau saine et éclatante.
+                            </p>
+                            <p>
+                                Lait d'amande, huile essentielle de Ylang-Ylang bio.
+                            </p>
+                        </div>
+                    </div> 
+                    <img class="imgbloc5" src="oui/image/plat3.png">
+                </div>
+                <div class="bcp6">
+                    <img class="imgbloc6" src="oui/image/plat4.png">
+                    <div class="texte6">
+                        <div class="txt6">
+                            <h1>Camomille</h1>
+                            <P>
+                                Pour une peau sensible.
+                            </P>
+                            <p>
+                                Savon pour bébé, femme enceinte, .... l'hydrolat de camomille bio soulage, purifie et revitalise l'épiderme. l'hydrolat de lavande bio rafraîchissant et apaisant, idéal pour délicat.
+                            </p>
+                            <p>
+                                Huile essentielle de camomille bio. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bcp7">
+                    <div class="texte7">
+                        <div>
+                            <h1>Dôme des abeilles</h1>
+                            <P>
+                                Douceur à toutes heures.
+                            </P>
+                            <p>
+                                Le mélange miel/lait de chèvre a des propriétés adoucissantes et régénératrices.
+                            </p>
+                            <p>
+                                Huile essentielle d'orange douce bio. 
+                            </p>
+                        </div>
+                    </div>
+                    <img class="imgbloc7" src="oui/image/plat5.png">
+                </div>
+            </section>
+            <section>
+                <div class="imgbloc8">
+                    <img class="nomlogo" src="oui/image/Saponification à froid.png" id="Information">
+                </div>
+                <div class="texte8">
+                    <p>Pour fabriquer un savon artisanal en saponification à froid, nous mélangeons nos corps gras, huile d'olive, coco bio, ricin bio, karité avec soude. Ce mélange est mixé à la main. Une fois que le mélange commence à s'épaissir, nous le coulons dans nos moules. Après 24h nous démoulons et découpons nos savons à la main.</p>
+                </div>
+                <div class="imgbloc9">
+                    <img class="imgbloc9-1" src="oui/image/last.png">
+                </div>
+                <div class="texte9">
+                    <p>
+                        Après cette étape nos savons séchent au minimum 6 semaines.
+                    </p>
+                    <p>
+                    Un savon artisanal fabriquer par cette méthode présente l'avantage d'être sugras, il apporte ainsi à un fort pourvoi nourrissant, mais ainsi émollient et antioxydant.
+                    </p>
+                    <h1>Que du bonheur</h1>
+                </div>
+            </section>
+        </section>
+        <img class="transition" src="oui/image/net.png">
+        <section class="background">   
+            <section class="partiesale">
+                <div class="bsdt">
+                    <img class="sizes" src="oui/image/besointruc.png" alt="Besoin d'un truc ?">
+                </div>
+                <ul class="menunavsale">
+                    <li><a href="#Drogues">Drogues</a></li>
+                    <li><a href="#Culottes">Culottes</a></li>
+                    <li><a href="#Objetsspéciaux">Objets spéciaux</a></li>
+                </ul>
+                <div class="textesaleintro">
+                    <p>Bon on va pas tourner en rond si t'es là, c'est pas pour rien donc soit tu continues et tu prends les infos qu'il te faut soit tu remontes en haut de la page et tu fais comme si tu n'avais rien vu ok ?</p>
+                </div>
+                <div class="textesaleintro2">
+                    <p>Si tu continues de lire se texte sache qu'il y a une chatbot si t'as question et passe quand même une bonne visite sur cette partie du site.</p>
+                </div>
+                <div class="drogue" id="Drogues">
+                    <div class="titredrogue"><img src="oui/image/drogues.png" alt="Drogues"></div>
+                    <div class="drogueall">
+                        <div class="drogue1">
+                            <img class="drg1" src="oui/image/drogue1.png" alt="Marijuana">
+                            <div class="txtdrogue1">   
+                                <h3>Marijuana</h3>
+                                <p class="txtcool">C'est notre produit phare, de loin le plus apprécié de tous. On dit même qu'on est les meilleurs fournisseurs de la prison haha.</p>
+                            </div> 
+                        </div>
+                        <div class="drogue2">
+                            <img class="drg1" src="oui/image/drogue2.png" alt="Héroïne">
+                            <div class="txtdrogue2">   
+                                <h3>Héroïne</h3>
+                                <p class="txtcool">je t'avoue que je connais pas de trop mais ça se vend bien et les s sont prêt à mettre le prix donc on s'est un peu renseigné pour avoir une qualité donc tu peux foncer les yeux fermés.</p>
+                            </div> 
+                        </div>
+                        <div class="drogue3">
+                            <img class="drg1" src="oui/image/drogue3.png" alt="Médicaments d'ordonnance">
+                            <div class="txtdrogue3">   
+                                <h3>Médicaments d'ordonnance</h3>
+                                <p class="txtcool">Franchement celui-là c'est le plus simple à me procurer, je crois qu'on n'y sera jamais a cours.</p>
+                            </div> 
+                        </div>
+                        <div class="drogue4">
+                            <img class="drg1" src="oui/image/drogue4.png" alt="Méthamphétamine">
+                            <div class="txtdrogue4">   
+                                <h3>Méthamphétamine</h3>
+                                <p class="txtcool">Franchement à tester une fois dans sa vie et en plus je suis de bonne humeur je t'offre une seringue en cadeau. Ne me remercie pas.</p>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="culotte" id="Culottes">
+                    <div class="culottesale"> <img src="oui/image/culoote.png" alt="culotte"></div>
+                    <div class="culotteall">
+                        <div class="culotte1">
+                            <img class="cul1" src="oui/image/culotte1.png" alt="culotte">
+                            <div class="txtculotte1">
+                                <h3>Une journée</h3>
+                                <p class="txtcool">Tu as toujours voulu sentir ma petite culotte et bien c'est ton jour de chance, je les vends cependant ne croit pas que ça va nous rapprocher. tu achètes et ne moi j'encaisse rien de plus simple. elle a été porte pendant 24h donc un bon petit début pour devenir accros à celles-ci.</p>
+                            </div>
+                        </div>
+                        <div class="culotte2">
+                            <img class="cul1" src="oui/image/culottebiensale.png" alt="culotte">
+                            <div class="txtculotte2">   
+                                <h3>Portée une semaine</h3>
+                                <p class="txtcool">Bon, c'est la même que l'autre sauf que je l'ai porté une semaine. T'as cru que j'allais me faire chier à tout redire une nouvelle fois ?</p>
+                            </div>
+                         </div>
+                        <div class="culotte3">
+                            <img class="cul1" src="oui/image/lotculotte.png" alt="culotte">
+                            <div class="txtculotte1"></div>
+                                <div class="txtculotte3">    
+                                    <h3>Lot de 6</h3>
+                                    <p class="txtcool">C'est juste 6x le premier et même pas avec une réduction. c'est juste pour t'aider à les acheter par lots de 6.</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Objetsp" id="Objetsspéciaux">
+                    <div class="objetspeciaux"> <img src="oui/image/objetspé.png" alt="objetspeciaux"></div>
+                    <div class="objetall">
+                        <div class="objet1">
+                            <img class="obj1" src="oui/image/poule.png" alt="poule">
+                            <div class="txtpoule">
+                                <h3>Une poule</h3>
+                                <p class="txtcool">Écoute-moi bien, si t'as des tripes, tu veux une poule qui pond la victoire, pas des conneries. On parle pas de n'importe quelle poule ici, on parle d'une machine à œufs, une poule qui bosse, pas une poule d'ornement. Fais pas le mariole, prends la poule, et transforme tes matins en triomphe aviaire. C'est ton moment, t'es prêt?</p>
+                            </div> 
+                        </div>
+                        <div class="objet2">
+                            <img class="obj1" src="oui/image/tournevis.png" alt="tournevis">
+                            <div class="txtvis">
+                                <h3>Tournevis</h3>
+                                <p class="txtcool">T'as des boulons qui te narguent chez toi? T'en as marre de te battre avec des vis qui se prennent pour les chefs? Voilà le deal: le tournevis en croix, la Rolls des outils. Ça va te dézinguer ces vis récalcitrantes comme un chef. Fini le temps où t'étais le larbin des vis, prends ce putain de tournevis en croix et impose-toi. Tu veux la victoire? Voilà ta clé.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>  
+    </main>
+    <footer>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" class="my-link" target="_blank">Envoyez une lettre à Pepper</a>
+        <p>&copy; 2024 Les sandwichs mous. Tous droits réservés.</p>
+    </footer>
+</body>
+
+</html>

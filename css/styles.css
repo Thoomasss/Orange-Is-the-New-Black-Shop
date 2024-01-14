@@ -1,0 +1,1221 @@
+:root{
+    --color-text: rgb(0, 0, 0); 
+    --color-ok: #B093C5;
+
+}
+@font-face {
+    font-family: "Kudryashev Headline Sans Web", 'Schoolbell', sans-serif;
+    src: url();
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0%;
+    
+}
+.partiepropre {
+    margin-left: 250px;
+    margin-right: 250px;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+nav a{
+    color: var(--color-text);
+    text-decoration: none;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    border-radius: 15px;
+}
+nav li {
+    margin: 15px;
+}
+nav a:hover{
+    color: var(--color-ok);
+}
+
+.menunav {
+    display: flex;
+    align-items: center;
+}
+ul.menunav {
+    margin: 0;
+    padding: 0;
+}
+
+/*les deux chats*/
+
+
+/*login*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: none;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 500px;
+    background: #000;
+    box-shadow: 0 0 50px #B093C5;
+    border-radius: 20px;
+    padding: 40px;
+    overflow: hidden;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper:hover{
+    animation: animate 1s linear infinite;
+}
+
+.form-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: 1s ease-in-out;
+}
+
+h2{
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+.input-group{
+    position: relative;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+
+}
+
+.input-group label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-group input{
+    width: 320px;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 0 5px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label{
+    top: -5px;
+}
+
+
+.remember{
+    margin: -5px 0 15px 5px;
+}
+
+.remember label{
+    color:#fff;
+    font-size: 14px;
+}
+
+.remember label input{
+    accent-color: #B093C5;
+}
+
+.toggleButton{
+    position: relative;
+    font-size: 25px;
+    color: #000;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+.toggleButton2{
+    position: relative;
+    width: 150px;
+    height: 40px;
+    background: #B093C5;
+    box-shadow: 0 0 10px #B093C5;
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+
+#toggleButton {
+    margin: 10px;
+    padding: 8px;
+    cursor: pointer;
+}
+.partiepropre{
+    z-index: 1;
+}
+
+/* chat bot noir*/
+
+
+.action {
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    background:#373737; 
+    border-radius: 50%;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    z-index: 2;
+}
+.action .material-icons{
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    transition: 0.6s ease-in-out;
+
+}
+.action .material-icons:hover {
+    font-size: 27px;
+    color: #F16935;
+}
+.action.active .material-icons:hover {
+    font-size: 27px;
+    color: #F16935;
+}
+.action.active .material-icons {
+    transform: rotate(360deg);
+    
+}
+.action .chat-container {
+    position: absolute;
+    bottom: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+
+}
+.action.active .chat-container {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s;
+}
+
+.chat-container {
+    width: 380px; 
+    height: 550px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 3px solid #3a3a3a;
+    background-color: #373737;
+    border-radius: 5px;
+    text-align: left;
+    color: #f5f5f5;
+    display: flex;
+    flex-direction:column
+    
+}
+
+#chat-display {
+    padding: 1rem;
+
+}
+.newmessage {
+    width: 50px; 
+    height: 50px; 
+    float: left; 
+    border-radius: 3rem; 
+    vertical-align: middle;
+}
+.response-left::before {
+    align-items: baseline;
+    display: flex;
+    justify-content: flex-start;
+    width: 25px; /* Ajustez la largeur de l'image selon vos besoins */
+    height: 25px; /* Ajustez la hauteur de l'image selon vos besoins */
+    background-size: cover;
+     /* Espace entre l'image et le texte de la réponse */
+
+}
+.response {
+    margin-bottom: 1rem;
+    background-color: #F16935;
+    border: 1rem solid #F16935;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.response img{
+    width: 50px;
+    height: 50px;
+    /*float: left; */
+    border-radius: 3rem;
+    vertical-align: middle;
+    margin: 0px 10px 0 0;
+}
+.response-container {
+    flex-grow: 3;
+    overflow-y: auto;
+    scroll-behavior:smooth;
+    background-color: #ffffff;  
+    color: #ffffff;
+    border-radius: 2px;
+}
+
+.button-container {
+    flex-direction: row;
+    display: flex;
+    margin: 10px;
+    flex-wrap: wrap; 
+    align-items: flex-end;
+    
+    
+}
+.response.response-left {
+    align-items: center;
+}
+.button-container button {
+    margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    float: left;
+    border: 1px solid rgb(0, 0, 0);
+    transition-duration: 0.4s;
+    background-color: white;
+    color: black;
+    border: 2px solid #343434;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.button-container button:hover {
+    background-color: #F16935;
+    color: white;
+  }
+   
+.response-left {
+    text-align: left;
+}
+
+/* chatbot blanc */
+
+
+.action2 {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    background:#f0f0f0; 
+    border-radius: 50%;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    z-index: 3;
+}
+.action2 .material-icons{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    color: #373737;
+    align-items: center;
+    justify-content: center;
+    transition: 0.6s ease-in-out;
+
+}
+.action2 .material-icons:hover {
+    font-size: 27px;
+    color: #B093C5;
+}
+.action2.active2 .material-icons:hover {
+    font-size: 27px;
+    color: #B093C5;
+}
+.action2.active2 .material-icons {
+    transform: rotate(360deg);
+    
+}
+.action2 .chat-container2 {
+    position: absolute;
+    bottom: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+
+}
+.action2.active2 .chat-container2 {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s;
+}
+
+.chat-container2 {
+    width: 380px; 
+    height: 550px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 3px solid #373737; 
+    background-color: #DFD4E8;
+    border-radius: 5px;
+    text-align: left;
+    color: #373737;
+    display: flex;
+    flex-direction:column
+    
+    
+}
+
+#chat-display2 {
+    padding: 1rem;
+
+}
+.newmessage2 {
+    width: 50px; 
+    height: 50px; 
+    float: left; 
+    border-radius: 3rem; 
+    vertical-align: middle;
+}
+.response-left2::before {
+    align-items: baseline;
+    display: flex;
+    justify-content: flex-start;
+    width: 25px; /* Ajustez la largeur de l'image selon vos besoins */
+    height: 25px; /* Ajustez la hauteur de l'image selon vos besoins */
+    background-size: cover;
+     /* Espace entre l'image et le texte de la réponse */
+
+}
+.response2 {
+    margin-bottom: 1rem;
+    background-color: #E4F0E8;
+    border: 1rem solid #E4F0E8;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.response2 img{
+    width: 50px;
+    height: 50px;
+    /*float: left; */
+    border-radius: 3rem;
+    vertical-align: middle;
+    margin: 0px 10px 0 0;
+}
+.response-container2 {
+    flex-grow: 3;
+    overflow-y: auto;
+    scroll-behavior:smooth;
+    background-color: #ffffff; 
+    border: 3px solid #373737; 
+    color: #000000;
+    border-radius: 2px;
+}
+
+.button-container2 {
+    flex-direction: row;
+    display: flex;
+    margin: 10px;
+    flex-wrap: wrap; 
+    align-items: flex-end;
+    
+    
+}
+.response2.response-left2 {
+    align-items: center;
+}
+.button-container2 button {
+    margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    float: left;
+    border: 1px solid rgb(0, 0, 0);
+    transition-duration: 0.4s;
+    background-color: white;
+    color: black;
+    border: 2px solid #343434;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.button-container2 button:hover {
+    background-color: #E4F0E8;
+    color: #373737; 
+  }
+   
+.response-left2 {
+    text-align: left;
+}
+
+
+
+
+nav img {
+    width: 200px;
+}
+
+/*test*/
+.chat-container {
+    position: relative;
+}
+
+.response-container {
+    height: 400px; /* Set the maximum height for response-container */
+    overflow-y: auto; /* Add a scrollbar when content overflows */
+}
+
+.button-container {
+    height: 100px; /* Adjust the max-height based on your preference */
+    overflow-y: auto; /* Add a scrollbar when content overflows */
+    justify-content: center;
+}
+
+/* Chatbot 2 */
+.chat-container2 {
+    position: relative;
+}
+
+.response-container2 {
+    height: 400px; /* Set the maximum height for response-container */
+    overflow-y: auto; /* Add a scrollbar when content overflows */
+}
+
+.button-container2 {
+    height: 100px; /* Adjust the max-height based on your preference */
+    overflow-y: auto; /* Add a scrollbar when content overflows */
+    justify-content: center;
+}
+
+
+/* Chatbot 1 */
+.response-container::-webkit-scrollbar,
+.button-container::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+.response-container::-webkit-scrollbar-thumb,
+.button-container::-webkit-scrollbar-thumb {
+    background-color: #F16935; /* Color of the scrollbar thumb */
+}
+
+.response-container::-webkit-scrollbar-track,
+.button-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color of the scrollbar track */
+}
+
+/* Chatbot 2 */
+.response-container2::-webkit-scrollbar,
+.button-container2::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+.response-container2::-webkit-scrollbar-thumb,
+.button-container2::-webkit-scrollbar-thumb {
+    background-color: #b4d4c0; /* Color of the scrollbar thumb */
+}
+
+.response-container2::-webkit-scrollbar-track,
+.button-container2::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color of the scrollbar track */
+}
+/*partie propre*/
+
+.logopoppy {
+    margin: 10px;
+    margin-right: 30px;
+}
+
+.menunav {
+    margin-left: 60px;
+    font-size: 25px;
+}
+
+.nomlogo {
+    max-width: 20%;
+    margin: 20px;
+}
+
+.logo{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+#logo {
+    display: flex;
+    align-items: center;
+}
+
+.sectionLogo{
+    margin-bottom: 50px;
+}
+.bcp1{
+    display: flex;
+    align-items: center;
+}
+
+.imgbloc0{
+    flex: 1;
+    padding: 0 20px;
+    font-size: 20px;
+}
+
+.imgbloc1{
+    max-width: 150%;
+}
+
+.imgbloc0-1{
+    position: relative;
+    max-width: 70%;
+}
+
+
+.imgbloc1-2{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.sect2{
+    margin-top: 50px;
+}
+
+.bcp2{
+    display: flex;
+    align-items: center;
+}
+
+.imgbloc2 {
+    max-width: 150%;
+}
+
+.txt2{
+    position: relative;
+    max-width: 70%;
+}
+
+.imgbloc2-1{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.shopLogo{
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.bcp3{
+    display: flex;
+    align-items: center;
+}
+
+.texte3{
+    flex: 1;
+    padding: 0 20px;
+    font-size: 20px;
+}
+
+.txt3{
+    position: relative;
+}
+
+.imgbloc3{
+    max-width: 50%;
+    height: auto;
+    display: block;
+}
+
+.bcp4{
+    display: flex;
+    align-items: center;
+}
+
+.texte4{
+    flex: 1;
+    padding: 0 20px;
+    font-size: 20px;
+}
+
+.txt4{
+    position: relative;
+}
+
+.imgbloc4{
+    max-width: 50%;
+    height: auto;
+    display: block;
+}
+
+.bcp5{
+    display: flex;
+    align-items: center;
+}
+
+.texte5{
+    flex: 1;
+    padding: 0 20px;
+    font-size: 20px;
+}
+
+.txt5{
+    position: relative;
+}
+
+.imgbloc5{
+    max-width: 50%;
+    height: auto;
+    display: block;
+}
+
+.bcp6{
+    display: flex;
+    align-items: center;
+}
+
+.texte6{
+    flex: 1;
+    padding: 0 20px;
+    font-size: 20px;
+}
+
+.txt6{
+    position: relative;
+}
+
+.imgbloc6{
+    
+    max-width: 50%;
+    height: auto;
+    display: block;
+}
+
+.bcp7{
+    display: flex;
+    align-items: center;
+}
+
+.texte7{
+    flex: 1;
+    padding: 0 20px;
+    font-size: 20px;
+}
+
+.txt7{
+    position: relative;
+}
+
+.imgbloc7{
+    max-width: 50%;
+    height: auto;
+    display: block;
+}
+
+.imgbloc8{
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.imgbloc8-1{
+    max-width: 30%;
+}
+
+.texte8{
+    text-align: center;
+    font-size: 20px;
+}
+
+.imgbloc9{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.texte9{
+    text-align: center;
+    font-size: 20px;
+}
+
+/*partie sale */
+ .txtcool{
+    color: #f0f0f0;
+    font-family: "Kudryashev Headline Sans Web";
+    font-size: 20px;
+ }
+ .menunavsale {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .menunavsale li {
+    float: left;
+  }
+
+  .menunavsale li a {
+    display: block;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Schoolbell';
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+
+  .menunavsale li a:hover {
+    color: #F16935 
+  }
+
+.objetspeciaux{
+    margin-bottom: 40px;
+    margin-top: 70px;
+    display: flex;
+}
+.background{
+    background: url('../oui/image/texturefond.png');
+    background-size: auto;
+    background-repeat: repeat-y;
+    background-color: #232323;
+}
+h3{
+    font-family: 'Schoolbell';
+    color: #f0f0f0;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+.partiesale{
+    margin-left: 250px;
+    margin-right: 250px;
+}
+.bsdt{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textesaleintro{
+    display: flex;
+
+    font-size: 20px;
+    text-align: left;
+    color: #f0f0f0;
+}
+.textesaleintro2{
+    display: flex;
+
+    font-size: 20px;
+    text-align: left;
+    color: #f0f0f0;
+}
+.transition{
+    object-fit: none;
+    width: 100%;
+    margin-bottom: -7px;
+    
+}
+.drg1{
+    display: flex ;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 80px;
+    margin-right: 15px;
+}
+
+.cul1{
+    display: flex ;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 80px;
+    margin-right: 15px;
+}
+.obj1{
+    display: flex ;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 80px;
+    margin-right: 15px;
+}
+
+
+.culottesale{
+    margin-bottom: 40px;
+    margin-top: 70px;
+    display: flex;
+}
+.titredrogue{
+    margin-bottom: 40px;
+    margin-top: 70px;
+    display: flex;
+}
+.drogue1{
+    flex-direction: row;
+    display: flex;
+}
+.drogue2{
+    flex-direction: row;
+    display: flex;
+}
+.drogue3{
+    flex-direction: row;
+    display: flex;
+}
+.drogue4{
+    flex-direction: row;
+    display: flex;
+}
+.culotte1{
+    flex-direction: row;
+    display: flex;
+}
+.culotte2{
+    flex-direction: row;
+    display: flex;
+}
+.culotte3{
+    flex-direction: row;
+    display: flex;
+}
+.objet1{
+    flex-direction: row;
+    display: flex;
+    align-items:normal;
+}
+.objet2{
+    flex-direction: row;
+    display: flex;
+}
+
+.imgbloc1{
+    max-width: 25%
+}
+.imgbloc2{
+    max-width: 25%
+}
+.txtpoule{
+    flex-direction: column;
+    display: flex;
+}
+.txtvis{
+    flex-direction: column;
+    display: flex;
+}
+.drg1:hover,
+.cul1:hover,
+.obj1:hover {
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.05); /* ajustez le facteur d'échelle selon vos préférences */
+}
+/*footer*/
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    max-width: 100%;
+}
+.my-link {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.my-link:hover {
+    color: #F16935 ;
+}
+   
+@media (max-width: 3000px) {
+    /* Styles pour les écrans de 768 pixels de large ou moins */
+    .action2 {
+    /* ... */
+    right: 50px; /* Modifier en fonction de la disposition souhaitée sur des écrans plus petits */
+    }
+            
+    .chat-container2 {
+    /* ... */
+    right: 0px; /* Modifier en fonction de la disposition souhaitée sur des écrans plus petits */
+    }
+}
+
+
+@media (max-width: 767px){
+    .menunav{
+        font-size: 16px;
+    }
+    #logo{
+        display:block;
+        max-width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    .main{
+        margin: 0px;
+    }
+    .partiesale{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .partiepropre {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .nomlogo{
+        max-width: 60%;
+    }
+    .imgbloc9-1{
+        max-width: 100%;
+    }
+    .imgbloc5{
+        max-width: 100%;
+    }
+    .imgbloc6{
+        max-width: 100%;
+    }
+    .imgbloc7{
+        max-width: 100%;
+    }
+    .imgbloc3{
+        max-width: 100%;
+    }
+    .imgbloc4{
+        max-width: 100%;
+    }
+    .bcp1{
+        display:block;
+        max-width: 100%;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .bcp2{
+        display:block;
+        max-width: 100%;
+        justify-content: center;
+        text-align: center; 
+    }
+    .bcp3{
+        flex-direction: column-reverse;
+        max-width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .bcp4{
+        display:block;
+        max-width: 100%;
+        justify-content: center;
+        text-align: center; 
+    }
+    .bcp5{
+        flex-direction: column-reverse;
+        max-width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .bcp6{
+        display:block;
+        max-width: 100%;
+        justify-content: center;
+        text-align: center; 
+    }
+    .bcp7{
+        flex-direction: column-reverse;
+        max-width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    .imgbloc1{
+        max-width: 80%;
+    }
+    .imgbloc1-2{
+        justify-content: center;
+        text-align: center; 
+        max-width: 142%;
+    }
+    .imgbloc2{
+        max-width: 80%;
+    }
+    .imgbloc2-1{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        max-width: 142%;
+    }
+    .sizes{
+        max-width: 100%;
+
+    }
+    .bsdt{
+        font-size: 30%;
+    }
+    .titredrogue{
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .culottesale{
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .objetspeciaux{
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .drogue1{
+        flex-direction: column;
+        display: flex;
+    }
+    .drogue2{
+        flex-direction: column;
+        display: flex;
+    }
+    .drogue3{
+        flex-direction: column;
+        display: flex;
+    }
+    .drogue4{
+        flex-direction: column;
+        display: flex;
+    }
+    .culotte1{
+        flex-direction: column;
+        display: flex;
+    }
+    .culotte2{
+        flex-direction: column;
+        display: flex;
+    }
+    .culotte3{
+        flex-direction: column;
+        display: flex;
+    }
+    .objet1{
+        flex-direction: column;
+        display: flex;
+        align-items:normal;
+    }
+    .objet2{
+        flex-direction: column;
+        display: flex;
+    }
+    .drg1{
+        display: flex ;
+
+        height: auto;
+        margin: 0px;
+        margin-top: 80px;
+        max-width: 100%;
+
+    }
+    
+    .cul1{
+        display: flex ;
+
+        height: auto;
+        margin: 0px;
+        margin-top: 80px;
+        max-width: 100%;
+
+        
+    }
+    .obj1{
+        display: flex ;
+
+        height: auto;
+        margin: 0px;
+        margin-top: 80px;
+        max-width: 100%;
+
+        
+    }
+    .menunav{
+        margin-left: 0px;
+    }
+    ul.menunav {
+        justify-content: center;
+    }
+    h3 {
+        justify-content: center;
+        font-family: 'Schoolbell';
+        color: #f0f0f0;
+        font-size: 30px;
+        margin-bottom: 15px;
+        display: flex;
+    }
+}
+
+@media (max-width: 1199px){
+    body{
+        margin: none;
+    }
+    
+    .menunav{
+        font-size: 16px;
+    }
+
+    .partiepropre{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .nomlogo{
+        max-width: 40%;
+    }
+
+}
