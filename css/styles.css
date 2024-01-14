@@ -1009,7 +1009,8 @@ footer {
         margin-right: 0px;
     }
     .nomlogo{
-        max-width: 60%;
+        max-width: 100%;
+        margin-bottom: 0px;
     }
     .imgbloc9-1{
         max-width: 100%;
@@ -1159,9 +1160,9 @@ footer {
 
         height: auto;
         margin: 0px;
-        margin-top: 80px;
+        margin-top: 60px;
         max-width: 100%;
-
+        margin-bottom: 10px;
     }
     
     .cul1{
@@ -1169,9 +1170,9 @@ footer {
 
         height: auto;
         margin: 0px;
-        margin-top: 80px;
+        margin-top: 60px;
         max-width: 100%;
-
+        margin-bottom: 10px;
         
     }
     .obj1{
@@ -1179,9 +1180,9 @@ footer {
 
         height: auto;
         margin: 0px;
-        margin-top: 80px;
+        margin-top: 60px;
         max-width: 100%;
-
+        margin-bottom: 10px;
         
     }
     .menunav{
@@ -1198,6 +1199,65 @@ footer {
         margin-bottom: 15px;
         display: flex;
     }
+    .tailledrg{
+        max-width: 60%;
+    }
+    .objetspeciaux{
+        margin-bottom: 0px;
+    }
+    .culottesale{
+        margin-bottom: 0px;
+    }
+    .titredrogue{
+        margin-bottom: 0px;
+    }
+    .menunavsale li a{
+        font-size: 25px;
+    }
+    .toggleButton {
+        position: relative;
+        font-size: 17px;
+        color: #000;
+        font-weight: 500;
+        cursor: pointer;
+        border-radius: 30px;
+        border: none;
+        outline: none;
+    }
+    .texte3 {
+        flex: 1;
+        padding: 0;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .texte4 {
+        flex: 1;
+        padding: 0;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .texte6 {
+        flex: 1;
+        padding: 0;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .texte5 {
+        flex: 1;
+        padding: 0;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .texte7 {
+        flex: 1;
+        padding: 0;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    h1{
+        margin: 5px;
+    }
+
 }
 
 @media (max-width: 1199px){
@@ -1215,7 +1275,7 @@ footer {
     }
 
     .nomlogo{
-        max-width: 40%;
+        max-width: 60%;
     }
 
 }
