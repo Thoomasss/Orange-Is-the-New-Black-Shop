@@ -183,10 +183,16 @@ h2{
 }
 .partiepropre{
     z-index: 1;
+    background-color: white;
 }
 
 /* chat bot noir*/
-
+.responseTrigger{
+    font-family: "Kudryashev Headline Sans Web"; 
+}
+.responseTrigger2{
+    font-family: "Kudryashev Headline Sans Web"; 
+}
 
 .action {
     position: fixed;
@@ -255,7 +261,6 @@ h2{
 
 #chat-display {
     padding: 1rem;
-
 }
 .newmessage {
     width: 50px; 
@@ -990,6 +995,9 @@ footer {
 .my-link:hover {
     color: #F16935 ;
 }
+footer{
+    font-family: "Kudryashev Headline Sans Web";
+}
    
 @media (max-width: 3000px) {
     /* Styles pour les écrans de 768 pixels de large ou moins */
@@ -1274,6 +1282,14 @@ footer {
     }
     h1{
         margin: 5px;
+    }
+    .chat-container {
+        width: 300px; 
+        height: 450px;
+    }    
+    .chat-container2 {
+        width: 300px; 
+        height: 450px;
     }
 
 }
